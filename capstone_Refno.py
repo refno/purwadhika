@@ -109,36 +109,36 @@ def Pasien_Tertentu():
 def menambah(Data_Pasien):
     lihat_pasien(Data_Pasien)
     while True:
-        No_Rekam_Medis = str(input('masukkan No. Rekam Medis :'))
+        No_Rekam_Medis = int(input('masukkan No. Rekam Medis :'))
         for i in range(len(Data_Pasien)):
             if No_Rekam_Medis == (Data_Pasien[i]['No_Rekam_Medis']):
                 print("Data dengan No rekam medis tersebut sudah ada")
                 break
-        else:
-            Nama_Pasien = str.title(input('Masukan Nama Pasien : '))
-            Jenis_Kelamin = str.title(input('Masukkan Jenis Kelamin :'))
-            Usia = int(input('Masukkan Usia :'))
-            Diagnosa = str.title(input('Masukkan Diagnosa :'))
-            Dokter = str.title(input('Masukkan Nama Dokter :'))
-            Perawatan = str.title(input('Masukkan Jenis Perawatan :'))
-            cek = str(input('Apakah yakin ingin menambahkakn data tersebut? (Y/N) :'))
-            if cek == 'Y':
-                Data_Pasien.append({
-                'No_Rekam_Medis': No_Rekam_Medis,
-                'Nama_Pasien': Nama_Pasien,
-                'Jenis_Kelamin': Jenis_Kelamin,
-                'Usia': Usia,
-                'Diagnosa': Diagnosa,
-                'Dokter': Dokter,
-                'Perawatan': Perawatan,
-                })
-                lihat_pasien(Data_Pasien)
-                break
             else:
-                print('Data tidak jadi di tambahkan')
-                lihat_pasien(Data_Pasien)
-                break
-    return
+                Nama_Pasien = str.title(input('Masukan Nama Pasien : '))
+                Jenis_Kelamin = str.title(input('Masukkan Jenis Kelamin :'))
+                Usia = int(input('Masukkan Usia :'))
+                Diagnosa = str.title(input('Masukkan Diagnosa :'))
+                Dokter = str.title(input('Masukkan Nama Dokter :'))
+                Perawatan = str.title(input('Masukkan Jenis Perawatan :'))
+                cek = str(input('Apakah yakin ingin menambahkakn data tersebut? (Y/N) :'))
+                if cek == 'Y':
+                    Data_Pasien.append({
+                        'No_Rekam_Medis': No_Rekam_Medis,
+                        'Nama_Pasien': Nama_Pasien,
+                        'Jenis_Kelamin': Jenis_Kelamin,
+                        'Usia': Usia,
+                        'Diagnosa': Diagnosa,
+                        'Dokter': Dokter,
+                        'Perawatan': Perawatan,
+                    })
+                    lihat_pasien(Data_Pasien)
+                    break
+                else:
+                    print('Data tidak jadi di tambahkan')
+                    lihat_pasien(Data_Pasien)
+                    break
+                return
 
 def update():
     lihat_pasien(Data_Pasien)
@@ -223,7 +223,7 @@ while True:
                     print('========== Menu #2 :Tambah Pasien =======')
                     menambah(Data_Pasien)
             elif (pilih == 2):
-                        break
+                break
             else:
                 print('Pilihan yang anda masukkan tidak tersedia (pilih 1-2)')
                 pilih = kembali()
